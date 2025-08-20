@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ProductType } from "../types";
 import ProductItem from "./ProductItem";
+import { Link } from "react-router-dom";
 const ProductList = () => {
   //전체 목록 조회
   const [products, setProducts] = useState<ProductType[]>([]);
@@ -41,6 +42,11 @@ const ProductList = () => {
 
   return (
     <ul>
+      <div>
+        <button>
+          <Link to={`/product/add`}>상품 추가하기</Link>
+        </button>
+      </div>
       {products &&
         products.map((i) => (
           <ProductItem
